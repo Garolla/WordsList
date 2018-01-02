@@ -60,7 +60,7 @@ class DBManager {
         updateWords()
     }
     
-    func delete(word w: WordRealmObj) {
+    func delete(word w: Word) {
         if let wordToDelete = objects.filter("word == '\(w.word)'").first {
             realm.beginWrite()
             realm.delete(wordToDelete)
@@ -78,6 +78,7 @@ class DBManager {
                 wordToEdit.date = NSDate()
             }
         }
+        updateWords()
     }
     
 }

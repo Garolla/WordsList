@@ -40,6 +40,15 @@ class MainVC: MasterVC {
             }
             .disposed(by: disposeBag)
         
+        tableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                
+                if let cell = self?.tableView.cellForRow(at: indexPath) as? WordCell {
+                    self?.performSegue(withIdentifier: "AddOrEditWordSegue", sender: cell.element)
+                }
+            }).disposed(by: disposeBag)
+        
+        tableView.tableFooterView = UIView()
         
         //Search bar logic
         searchBar
@@ -88,8 +97,13 @@ class MainVC: MasterVC {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AddOrEditWordSegue", let wordToEdit = sender as? WordRealmObj {
+        if segue.identifier == "AddOrEditWordSegue", let wordToEdit = sender as? Word {
             print("Editing word: \(wordToEdit.word)")
+            
+            if let vc = segue.destination as? AddOrEditWordVC {
+                vc.wordToEdit = wordToEdit
+            }
+            
         }
     }
     

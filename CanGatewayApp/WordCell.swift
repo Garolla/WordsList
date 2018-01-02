@@ -27,7 +27,7 @@ class WordCell: UITableViewCell {
     func configureCell(_ e: Word) {
         element = e
         nameLbl.text = " " + e.word.capitalized
-        translatedLbl.text = " \(e.meaning) "
+        translatedLbl.text = " \(e.meaning.capitalized) "
         valueLbl.text = "\(e.count) "
     }
 }

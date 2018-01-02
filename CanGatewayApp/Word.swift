@@ -15,8 +15,8 @@ class Word {
     private(set) var count: Int
     
     init(word w: String, meaning m: String, count c: Int ) {
-        word = w
-        meaning = m
+        word = w.lowercased()
+        meaning = m.lowercased()
         count = c == 0 ? 1 : c
     }
 }

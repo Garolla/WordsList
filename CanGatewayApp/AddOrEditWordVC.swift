@@ -17,7 +17,7 @@ class AddOrEditWordVC: MasterVC {
     @IBOutlet weak var meaningTextField: UITextField!
     @IBOutlet weak var countTextField: UITextField!
     
-    var wordToEdit: WordRealmObj?
+    var wordToEdit: Word?
     
     private let disposeBag = DisposeBag()
     
@@ -33,8 +33,11 @@ class AddOrEditWordVC: MasterVC {
     }
     
     private func setupUI() {
-        if wordToEdit != nil {
+        if let w = wordToEdit {
             self.title = "Edit word"
+            nameTextField.text = w.word.capitalized
+            meaningTextField.text = w.meaning.capitalized
+            countTextField.text = "\(w.count)"
             deleteBtn.isHidden = false
         } else {
             self.title = "Add word"
@@ -51,11 +54,9 @@ class AddOrEditWordVC: MasterVC {
         self.navigationController?.popViewController(animated: true)
     }
     
-    override func done() {
-        //TODO: Add or edit
+    override func done() { 
         if let word = nameTextField.text, let mean = meaningTextField.text, let count = Int(countTextField.text ?? "0") {
             if word != "" && mean != "" {
-                
                 let w = Word(word: word, meaning: mean, count: count)
                 //If the word to edit is nil it means I'm creating a new word (or increase count to a previous written word)
                 if wordToEdit == nil {
