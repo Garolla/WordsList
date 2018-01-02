@@ -45,7 +45,10 @@ class AddOrEditWordVC: MasterVC {
     }
     
     private func deleteWord() {
-        
+        if let w = wordToEdit {
+            DBManager.shared.delete(word: w)
+        }
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func done() {
@@ -54,7 +57,12 @@ class AddOrEditWordVC: MasterVC {
             if word != "" && mean != "" {
                 
                 let w = Word(word: word, meaning: mean, count: count)
-                DBManager.shared.updateWordCountOrCreateWord(word: w)
+                //If the word to edit is nil it means I'm creating a new word (or increase count to a previous written word)
+                if wordToEdit == nil {
+                    DBManager.shared.updateCountOrCreate(word: w)
+                } else { //Otherwise I am in editing mode
+                    DBManager.shared.edit(word: w)
+                }
             }
         }
         self.navigationController?.popViewController(animated: true)

@@ -46,31 +46,38 @@ class DBManager {
         words.value = res
     }
     
-    func updateWordCountOrCreateWord(word w: Word) {
-        if let w = objects.filter("word == '\(w.word)'").first {
+    func updateCountOrCreate(word w: Word) {
+        if let wordToEdit = objects.filter("word == '\(w.word)'").first {
             try! realm.write {
-                w.count = w.count + 1
+                wordToEdit.count = wordToEdit.count + 1
             }
         } else  {
             realm.beginWrite()
-            realm.create(WordRealmObj.self, value: [w.word, w.meaning, w.count])
+            realm.create(WordRealmObj.self, value: [w.word.lowercased(), w.meaning.lowercased(), w.count])
             try! realm.commitWrite()
         }
         
         updateWords()
     }
     
-    func deleteWord(atIndex i: Int) {
-        realm.beginWrite()
-        realm.delete(objects[i])
-        try! realm.commitWrite()
+    func delete(word w: WordRealmObj) {
+        if let wordToDelete = objects.filter("word == '\(w.word)'").first {
+            realm.beginWrite()
+            realm.delete(wordToDelete)
+            try! realm.commitWrite()
+        }
         updateWords()
     }
     
-    func editWord(atIndex i: Int, word w: String, meaning m: String, count c: Int) {
-        realm.beginWrite()
-        realm.delete(objects[i])
-        try! realm.commitWrite()
+    func edit(word w: Word) {
+        if let wordToEdit = objects.filter("word == '\(w.word)'").first {
+            try! realm.write {
+                wordToEdit.word = w.word
+                wordToEdit.meaning = w.meaning
+                wordToEdit.count = w.count
+                wordToEdit.date = NSDate()
+            }
+        }
     }
     
 }
