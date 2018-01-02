@@ -146,10 +146,10 @@
                                 </state>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="OyO-6g-jvK">
-                                <rect key="frame" x="8" y="104" width="359" height="133.5"/>
+                                <rect key="frame" x="16" y="104" width="343" height="133.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dav-yc-4pt">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ld-eJ-NTq">
                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="20"/>
@@ -158,7 +158,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Insert word" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6es-0g-U9t">
-                                                <rect key="frame" x="45" y="0.0" width="314" height="20"/>
+                                                <rect key="frame" x="45" y="0.0" width="298" height="20"/>
                                                 <color key="textColor" white="0.0" alpha="0.54606584820000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -166,7 +166,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zv-nM-mGr">
-                                        <rect key="frame" x="0.0" y="57" width="359" height="20"/>
+                                        <rect key="frame" x="0.0" y="57" width="343" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mean" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBZ-A6-P0G">
                                                 <rect key="frame" x="0.0" y="0.0" width="43" height="20"/>
@@ -175,7 +175,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Insert meaning" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aPE-y8-yAi">
-                                                <rect key="frame" x="43" y="0.0" width="316" height="20"/>
+                                                <rect key="frame" x="43" y="0.0" width="300" height="20"/>
                                                 <color key="textColor" white="0.0" alpha="0.54606584820000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -183,7 +183,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3d-g3-YDv">
-                                        <rect key="frame" x="0.0" y="113.5" width="359" height="20"/>
+                                        <rect key="frame" x="0.0" y="113.5" width="343" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfY-1i-ymv">
                                                 <rect key="frame" x="0.0" y="0.0" width="46.5" height="20"/>
@@ -192,7 +192,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FZd-yC-54M">
-                                                <rect key="frame" x="46.5" y="0.0" width="312.5" height="20"/>
+                                                <rect key="frame" x="46.5" y="0.0" width="296.5" height="20"/>
                                                 <color key="textColor" white="0.0" alpha="0.54606584820000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
@@ -205,9 +205,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="OyO-6g-jvK" firstAttribute="leading" secondItem="RGg-I3-lxh" secondAttribute="leading" constant="8" id="9VQ-e3-wHt"/>
+                            <constraint firstItem="OyO-6g-jvK" firstAttribute="leading" secondItem="RGg-I3-lxh" secondAttribute="leading" constant="16" id="9VQ-e3-wHt"/>
                             <constraint firstItem="OyO-6g-jvK" firstAttribute="top" secondItem="fq1-ZN-eCI" secondAttribute="bottom" constant="40" id="Otc-d4-IFT"/>
-                            <constraint firstAttribute="trailing" secondItem="OyO-6g-jvK" secondAttribute="trailing" constant="8" id="Vjj-7y-gnm"/>
+                            <constraint firstAttribute="trailing" secondItem="OyO-6g-jvK" secondAttribute="trailing" constant="16" id="Vjj-7y-gnm"/>
                             <constraint firstItem="OyO-6g-jvK" firstAttribute="height" secondItem="RGg-I3-lxh" secondAttribute="height" multiplier="0.2" id="aJo-vm-gEF"/>
                             <constraint firstItem="3ux-Ra-U7h" firstAttribute="leading" secondItem="RGg-I3-lxh" secondAttribute="leading" constant="16" id="kch-ZE-A5X"/>
                             <constraint firstItem="TPT-l5-Yug" firstAttribute="top" secondItem="3ux-Ra-U7h" secondAttribute="bottom" constant="20" id="uUq-Pz-A91"/>

@@ -56,7 +56,7 @@ class AddOrEditWordVC: MasterVC {
     
     override func done() { 
         if let word = nameTextField.text, let mean = meaningTextField.text, let count = Int(countTextField.text ?? "0") {
-            if word != "" && mean != "" {
+            if word != "" {
                 let w = Word(word: word, meaning: mean, count: count)
                 //If the word to edit is nil it means I'm creating a new word (or increase count to a previous written word)
                 if wordToEdit == nil {
