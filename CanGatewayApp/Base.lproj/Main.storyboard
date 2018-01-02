@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -130,13 +131,95 @@
                     <view key="view" contentMode="scaleToFill" id="RGg-I3-lxh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ux-Ra-U7h">
+                                <rect key="frame" x="16" y="615" width="60" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="BhI-m7-VyM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" red="0.69411764710000001" green="0.1058823529" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="OyO-6g-jvK">
+                                <rect key="frame" x="8" y="104" width="359" height="133.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dav-yc-4pt">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="20"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ld-eJ-NTq">
+                                                <rect key="frame" x="0.0" y="0.0" width="45" height="20"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" white="0.0" alpha="0.85387834819999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Insert word" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6es-0g-U9t">
+                                                <rect key="frame" x="45" y="0.0" width="314" height="20"/>
+                                                <color key="textColor" white="0.0" alpha="0.54606584820000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zv-nM-mGr">
+                                        <rect key="frame" x="0.0" y="57" width="359" height="20"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mean" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBZ-A6-P0G">
+                                                <rect key="frame" x="0.0" y="0.0" width="43" height="20"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" white="0.0" alpha="0.85387834819999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Insert meaning" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aPE-y8-yAi">
+                                                <rect key="frame" x="43" y="0.0" width="316" height="20"/>
+                                                <color key="textColor" white="0.0" alpha="0.54606584820000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3d-g3-YDv">
+                                        <rect key="frame" x="0.0" y="113.5" width="359" height="20"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfY-1i-ymv">
+                                                <rect key="frame" x="0.0" y="0.0" width="46.5" height="20"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" white="0.0" alpha="0.85387834819999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FZd-yC-54M">
+                                                <rect key="frame" x="46.5" y="0.0" width="312.5" height="20"/>
+                                                <color key="textColor" white="0.0" alpha="0.54606584820000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OyO-6g-jvK" firstAttribute="leading" secondItem="RGg-I3-lxh" secondAttribute="leading" constant="8" id="9VQ-e3-wHt"/>
+                            <constraint firstItem="OyO-6g-jvK" firstAttribute="top" secondItem="fq1-ZN-eCI" secondAttribute="bottom" constant="40" id="Otc-d4-IFT"/>
+                            <constraint firstAttribute="trailing" secondItem="OyO-6g-jvK" secondAttribute="trailing" constant="8" id="Vjj-7y-gnm"/>
+                            <constraint firstItem="OyO-6g-jvK" firstAttribute="height" secondItem="RGg-I3-lxh" secondAttribute="height" multiplier="0.2" id="aJo-vm-gEF"/>
+                            <constraint firstItem="3ux-Ra-U7h" firstAttribute="leading" secondItem="RGg-I3-lxh" secondAttribute="leading" constant="16" id="kch-ZE-A5X"/>
+                            <constraint firstItem="TPT-l5-Yug" firstAttribute="top" secondItem="3ux-Ra-U7h" secondAttribute="bottom" constant="20" id="uUq-Pz-A91"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="countTextField" destination="FZd-yC-54M" id="2dA-dS-nTh"/>
+                        <outlet property="deleteBtn" destination="3ux-Ra-U7h" id="sjH-Pz-UGD"/>
+                        <outlet property="meaningTextField" destination="aPE-y8-yAi" id="tSW-7y-qan"/>
+                        <outlet property="nameTextField" destination="6es-0g-U9t" id="EaK-rr-z3c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZk-lh-CF4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1289" y="118"/>
+            <point key="canvasLocation" x="1174" y="118"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fVd-Lt-H8r">

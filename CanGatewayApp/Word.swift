@@ -17,6 +17,6 @@ class Word {
     init(word w: String, meaning m: String, count c: Int ) {
         word = w
         meaning = m
-        count = c
+        count = c == 0 ? 1 : c
     }
 }

@@ -57,7 +57,6 @@ class DBManager {
             try! realm.commitWrite()
         }
         
-        
         updateWords()
     }
     
