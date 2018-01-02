@@ -33,7 +33,7 @@ class DBManager {
     
     private init() {
         realm = try! Realm()
-        objects = try! Realm().objects(WordRealmObj.self).sorted(byKeyPath: "date")
+        objects = try! Realm().objects(WordRealmObj.self).sorted(byKeyPath: "date", ascending: false)
         updateWords()
     }
     
