@@ -35,7 +35,7 @@ class MainVC: MasterVC {
         
         allWords.asObservable()
             .bind(to: tableView.rx.items(cellIdentifier: "SignalCell", cellType: WordCell.self)) { (row, element, cell) in
-                
+                print(element.word)
                 cell.configureCell(element)
             }
             .disposed(by: disposeBag)

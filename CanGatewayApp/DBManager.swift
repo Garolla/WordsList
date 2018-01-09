@@ -60,8 +60,8 @@ class DBManager {
         updateWords()
     }
     
-    func delete(word w: Word) {
-        if let wordToDelete = objects.filter("word == '\(w.word)'").first {
+    func delete(oldWord: Word) {
+        if let wordToDelete = objects.filter("word == '\(oldWord.word)'").first {
             realm.beginWrite()
             realm.delete(wordToDelete)
             try! realm.commitWrite()
@@ -69,8 +69,8 @@ class DBManager {
         updateWords()
     }
     
-    func edit(word w: Word) {
-        if let wordToEdit = objects.filter("word == '\(w.word)'").first {
+    func edit(word w: Word, oldWord: Word) {
+        if let wordToEdit = objects.filter("word == '\(oldWord.word)'").first {
             try! realm.write {
                 wordToEdit.word = w.word
                 wordToEdit.meaning = w.meaning

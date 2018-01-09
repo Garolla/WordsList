@@ -49,7 +49,7 @@ class AddOrEditWordVC: MasterVC {
     
     private func deleteWord() {
         if let w = wordToEdit {
-            DBManager.shared.delete(word: w)
+            DBManager.shared.delete(oldWord: w)
         }
         self.navigationController?.popViewController(animated: true)
     }
@@ -58,11 +58,11 @@ class AddOrEditWordVC: MasterVC {
         if let word = nameTextField.text, let mean = meaningTextField.text, let count = Int(countTextField.text ?? "0") {
             if word != "" {
                 let w = Word(word: word, meaning: mean, count: count)
-                //If the word to edit is nil it means I'm creating a new word (or increase count to a previous written word)
-                if wordToEdit == nil {
-                    DBManager.shared.updateCountOrCreate(word: w)
-                } else { //Otherwise I am in editing mode
-                    DBManager.shared.edit(word: w)
+                //If the word to edit is nil it means I'm creating a new word (or increase count to a previous written word). Otherwise I am in editing mode
+                if let oldWord = wordToEdit {
+                    DBManager.shared.edit(word: w, oldWord: oldWord ) 
+                } else {
+                   DBManager.shared.updateCountOrCreate(word: w)
                 }
             }
         }
