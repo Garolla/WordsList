@@ -47,7 +47,7 @@ class DBManager {
     }
     
     func updateCountOrCreate(word w: Word) {
-        if let wordToEdit = objects.filter("word == '\(w.word)'").first {
+        if let wordToEdit = objects.filter("word == %@",w.word).first {
             try! realm.write {
                 wordToEdit.count = wordToEdit.count + 1
             }
